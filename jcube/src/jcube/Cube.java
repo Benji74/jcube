@@ -9,13 +9,13 @@ public class Cube {
 
 	private String nameOfFiles;
 
-	public void setNameOfFiles(String nameOfFiles) {
+	private void setNameOfFiles(String nameOfFiles) {
 		this.nameOfFiles = nameOfFiles;
 	}
 	
-	public static Cube fromTextFile(String string) {
+	public static Cube fromTextFile(String filename) {
 		Cube cube = new Cube();
-		cube.setNameOfFiles(string);
+		cube.setNameOfFiles(filename);
 		return cube;
 	}
 
@@ -24,7 +24,7 @@ public class Cube {
 	}
 
 	public String titreFace(int i) throws IOException {
-		BufferedReader reader = new BufferedReader(new FileReader(new File(nameOfFiles)));
+		BufferedReader reader = new BufferedReader(new FileReader(new File(this.nameOfFiles)));
 		String line = reader.readLine();
 		reader.close();
 		
