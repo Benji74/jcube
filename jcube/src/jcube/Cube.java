@@ -7,10 +7,16 @@ import java.io.IOException;
 
 public class Cube {
 
-	static String nameOfFile;
+	private String nameOfFiles;
+
+	public void setNameOfFiles(String nameOfFiles) {
+		this.nameOfFiles = nameOfFiles;
+	}
+	
 	public static Cube fromTextFile(String string) {
-		nameOfFile = string;
-		return new Cube();
+		Cube cube = new Cube();
+		cube.setNameOfFiles(string);
+		return cube;
 	}
 
 	public Integer numberOfFace() {
@@ -18,7 +24,7 @@ public class Cube {
 	}
 
 	public String titreFace(int i) throws IOException {
-		BufferedReader reader = new BufferedReader(new FileReader(new File(nameOfFile)));
+		BufferedReader reader = new BufferedReader(new FileReader(new File(nameOfFiles)));
 		String line = reader.readLine();
 		reader.close();
 		
