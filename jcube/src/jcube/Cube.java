@@ -8,6 +8,7 @@ import java.io.IOException;
 public class Cube {
 
 	private String nameOfFiles;
+	private String faceOne;
 
 	private void setNameOfFiles(String nameOfFiles) {
 		this.nameOfFiles = nameOfFiles;
@@ -28,12 +29,13 @@ public class Cube {
 	}
 
 	public Cube addFace(String string) {
-		// TODO Auto-generated method stub
+		this.faceOne = string;
 		return this;
 	}
 	
 	public boolean equals(Object other) {
-		return true;
+		Cube otherCube = (Cube)other;
+		return this.faceOne.equals(otherCube.faceOne);
 	}
 
 }
