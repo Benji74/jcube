@@ -19,16 +19,21 @@ public class Cube {
 		return cube;
 	}
 
-	public Integer numberOfFace() {
-		return 1;
-	}
-
 	public String titreFace(int i) throws IOException {
 		BufferedReader reader = new BufferedReader(new FileReader(new File(this.nameOfFiles)));
 		String line = reader.readLine();
 		reader.close();
 		
 		return line.substring(2);
+	}
+
+	public Cube addFace(String string) {
+		// TODO Auto-generated method stub
+		return this;
+	}
+	
+	public boolean equals(Object other) {
+		return true;
 	}
 
 }
