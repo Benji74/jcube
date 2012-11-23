@@ -39,8 +39,8 @@ public class Cube {
 		return this.faceOne.equals(otherCube.faceOne);
 	}
 
-	public String xmlFromSVGFile(String string) throws SAXException, IOException, ParserConfigurationException, XPathExpressionException, TransformerFactoryConfigurationError, TransformerException{
-		XMLDocument cube = (new XMLDocument()).loadXMLFile(string);
+	public String xmlFromSVGFile(String filePath) throws Exception{
+		XMLDocument cube = (new XMLDocument()).loadXMLFile(filePath);
 		Element blocNode = cube.getFirstNodeFromXPath("//tspan[contains(text(), \"$BLOCK1\")]");
 		blocNode.setTextContent(faceOne);
 		return cube.asXMLString();
