@@ -23,6 +23,5 @@ public class ReplaceCubeSVGBlock1ToMesAstucesTest {
 		
 		XMLDocument  readCubeSVG = (new XMLDocument()).loadXMLString(cubeSVG.asXMLString());
 		assertTrue(readCubeSVG.match("//tspan[contains(text(), \"Mes astuces\")]"));
-	}
-
+	}	
 }

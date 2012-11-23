@@ -5,6 +5,14 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.TransformerException;
+import javax.xml.transform.TransformerFactoryConfigurationError;
+import javax.xml.xpath.XPathExpressionException;
+
+import org.w3c.dom.Element;
+import org.xml.sax.SAXException;
+
 public class Cube {
 	private String faceOne;
 
@@ -29,6 +37,13 @@ public class Cube {
 	public boolean equals(Object other) {
 		Cube otherCube = (Cube)other;
 		return this.faceOne.equals(otherCube.faceOne);
+	}
+
+	public String xmlFromSVGFile(String string) throws SAXException, IOException, ParserConfigurationException, XPathExpressionException, TransformerFactoryConfigurationError, TransformerException{
+		XMLDocument cube = (new XMLDocument()).loadXMLFile(string);
+		Element blocNode = cube.getFirstNodeFromXPath("//tspan[contains(text(), \"$BLOCK1\")]");
+		blocNode.setTextContent(faceOne);
+		return cube.asXMLString();
 	}
 
 }

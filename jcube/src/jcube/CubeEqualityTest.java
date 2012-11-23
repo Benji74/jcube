@@ -12,5 +12,12 @@ public class CubeEqualityTest {
 		Cube cubeSVN = (new Cube()).addFace("SVN");
 		assertFalse(cubeGit.equals(cubeSVN));
 	}
+	@Test
+	public void FusionnerLeCubeEnXML() throws Exception{
+		Cube cube = (new Cube()).addFace("Comment sortir du cours plus tôt");
+		String xml = cube.xmlFromSVGFile("templates/cube.svg");
+		XMLDocument readCubeXML = (new XMLDocument()).loadXMLString(xml);
+		assertTrue(readCubeXML.match("//tspan[contains(text(), \"Comment sortir du cours plus tôt\")]"));
+	}
 
 }
