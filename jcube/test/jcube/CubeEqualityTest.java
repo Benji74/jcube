@@ -13,6 +13,11 @@ public class CubeEqualityTest {
 		Cube cubeSVN = (new Cube()).addFace("SVN");
 		assertFalse(cubeGit.equals(cubeSVN));
 	}
-	
+	@Test
+	public void twoCubeWithTwoDifferentFaceShouldNotBeEqual() {
+		Cube cubeGit = (new Cube()).addFace("Git").addFace("Face");
+		Cube cubeSVN = (new Cube()).addFace("SVN").addFace("Face2");
+		assertFalse(cubeGit.equals(cubeSVN));
+	}
 
 }
