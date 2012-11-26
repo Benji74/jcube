@@ -1,5 +1,1 @@
-<<<<<<< HEAD
-* Comment sortir du cours plus tôt
-=======
 * Comment sortir du cours plus tot
->>>>>>> refs/remotes/origin/cours_iae
